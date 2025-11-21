@@ -4,7 +4,7 @@ from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import StandardScaler
 
 # Upload the file manually or place in /content
-df = pd.read_csv('/mnt/data/AirQualityUCI.csv', sep=';', decimal=',', na_values=[-200, -200.0])
+df = pd.read_csv('AirQualityUCI.csv', sep=';', decimal=',', na_values=[-200, -200.0])
 
 # Remove unnamed columns
 df = df.loc[:, ~df.columns.str.contains('^Unnamed')]
@@ -31,7 +31,7 @@ if 'CO(GT)' in df.columns:
     df = df.rename(columns={'CO(GT)': 'CO'})
 
 # ENGINEERED FEATURE CREATION
-df.to_csv('/mnt/data/AirQuality_CLEAN.csv', index=False)
+df.to_csv('AirQuality_CLEAN.csv', index=False)
 df_eng = df.copy()
 
 # Time-based features
@@ -54,7 +54,7 @@ for h in [1, 6, 12, 24]:
     df_eng[f'CO_fut_{h}h'] = df_eng['CO'].shift(-h)
 
 # MODEL-READY DATASET (IMPUTED + SCALED)
-df_eng.to_csv('/mnt/data/AirQuality_Engineered.csv', index=False)
+df_eng.to_csv('AirQuality_Engineered.csv', index=False)
 df_model = df_eng.copy()
 
 # Predictor features
@@ -83,8 +83,6 @@ scaled_features = scaler.fit_transform(df_model[predictor_cols])
 for i, col in enumerate(predictor_cols):
     df_model[f"{col}_scaled"] = scaled_features[:, i]
 
-# -------------------------------------------------------------
 # 6. SAVE MODEL-READY DATASET
-# -------------------------------------------------------------
-df_model.to_csv('/mnt/data/AirQuality_ModelReady.csv', index=False)
-print("Saved:", '/mnt/data/AirQuality_ModelReady.csv')
+df_model.to_csv('AirQuality_ModelReady.csv', index=False)
+print("Saved:", 'AirQuality_ModelReady.csv')
