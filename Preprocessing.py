@@ -63,7 +63,7 @@ predictor_cols = [
     'T', 'RH', 'AH',
     'PT08.S1(CO)', 'PT08.S2(NMHC)', 'PT08.S3(NOx)',
     'PT08.S4(NO2)', 'PT08.S5(O3)',
-    'CO_lag_1', 'CO_lag_6', 'CO_lag_12', 'CO_lag_24',
+    'CO_lag_1', 'CO_lag_3', 'CO_lag_12', 'CO_lag_24',
     'CO_roll_mean_3', 'CO_roll_mean_6',
     'CO_roll_mean_12', 'CO_roll_mean_24'
 ]
