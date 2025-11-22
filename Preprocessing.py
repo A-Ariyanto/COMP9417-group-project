@@ -50,7 +50,7 @@ for win in [3, 6, 12, 24]:
     )
 
 # Future targets for forecasting
-for h in [1, 6, 12, 24]:
+for h in [1, 3, 12, 24]:
     df_eng[f'CO_fut_{h}h'] = df_eng['CO'].shift(-h)
 
 # MODEL-READY DATASET (IMPUTED + SCALED)
