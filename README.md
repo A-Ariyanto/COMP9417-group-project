@@ -1,4 +1,4 @@
-# FORECASTING AIR POLLUTION WITH MACHINE LEARNING
+# FORECASTING AIR POLLUTION WITH MACHINE LEARNING (COMP9417 Group project)
 
 ## Group Members
 **Abdullah Ariyanto** (z5543164), **Jeremia Kevin Raja Siahaan** (z5493216), **Riasat Ahmed Chowdury** (z5527294), and **Zafran Akhmadery Arif** (z5603811)
